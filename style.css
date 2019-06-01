@@ -1,0 +1,271 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300|Roboto&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+
+/* Typography */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: #121212;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+ h2 {
+   font-size: 2em;
+ }
+
+ h3 {
+   font-size: 1.5em;
+   margin-bottom: 30px;
+   text-transform: uppercase;
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+ h3, p {
+   margin-left: 50px;
+   margin-right: 60px;
+   line-height: 1.5em;
+ }
+
+/*SECTION 1 - INTRO */
+
+/* INTRO_Banner*/
+header {
+  background-image: url(images/scott-webb-186137-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  top: -300px;
+  border-bottom: 5px solid #121212;
+}
+
+header h1 {
+  font-size: 5em;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 2em;
+}
+
+header h1:after {
+  content: '';
+  height: 1em;
+  position: absolute;
+  top: 0;
+  left: -580px;
+  width: 100%;
+  z-index: -1;
+  border-bottom: 5px dotted #FF5056;
+}
+
+header h2 {
+  font-weight: lighter;
+  position: absolute;
+  top: 150px;
+  left: 380px;
+  color: #FF5056;
+}
+
+/* INTRO_quote*/
+.summary {
+  position: absolute;
+  left: 200px;
+  top: 400px;
+  width: 500px;
+  color: #FF5056;
+}
+
+.summary p {
+  font-style: italic;
+}
+
+.summary p:first-child:before {
+  content:open-quote;
+  color: #121212;
+  font-size: 5em;
+  position: absolute;
+  left: 0px;
+}
+
+.summary p:last-child:after {
+  content: close-quote;
+  color: #121212;
+  font-size: 5em;
+  position: absolute;
+  bottom: -30px;
+}
+
+.summary a {
+  color: #121212;
+  font-weight: 900;
+}
+
+/* INTRO_green box*/
+.preamble {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  bottom: -380px;
+  left: 200px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  border-radius: 10px;
+  background-color: #121212;
+  color: #fefefe;
+}
+
+/* SECTION 2 - MAIN*/
+.main {
+  display: grid;
+  grid-template:
+  500px 630px 500px 630px 100px / /*rows*/
+  200px 1200px 200px; /*columns*/
+}
+
+.explanation {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+
+  box-sizing: content-box;
+  border-right: 20px dotted #121212;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.explanation h3, .explanation p {
+  width: 500px;
+}
+
+.participation {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+
+  box-sizing: content-box;
+  border-top: 20px dotted #121212;
+  border-top-left-radius: 10px;
+  border-left: 20px dotted #121212;
+  border-bottom: 20px dotted #121212;
+  border-bottom-left-radius:10px;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.participation h3, .participation p {
+  width: 500px;
+}
+
+.benefits {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+
+  box-sizing: content-box;
+  border-top-right-radius: 10px;
+  border-right: 20px dotted #121212;
+  border-bottom-right-radius:10px;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.benefits h3, .benefits p {
+  width: 500px;
+}
+
+.requirements {
+  grid-row: 4 / 5;
+  grid-column: 1 / span 4;
+
+  background-color: #BFBD80;
+  border-top: 5px solid #121212;
+  border-bottom: 5px solid #121212;
+
+  padding-left: 200px;
+  padding-right: 200px;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  position: relative;
+}
+
+.requirements h3, .requirements p {
+  width: 500px;
+}
+
+.requirements p {
+  margin-bottom: 30px;
+}
+
+.requirements p:last-child {
+  position: absolute;
+  bottom: 10px;
+  width: 1000px;
+  text-align: center;
+  font-weight: 900;
+  font-style: italic;
+}
+
+footer {
+  grid-row: 5 / 6;
+  grid-column: span 4;
+
+  background-color: #FF5056;
+  color: #fefefe;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  color: inherit;
+  font-weight: 900;
+  font-size: 1.5em;
+  display: block;
+  padding: 30px;
+}
+
+.sidebar div.wrapper {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  background-color: #121212;
+  color: #fefefe;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.design-selection a, .design-archives a, .zen-resources a {
+  color: inherit;
+  font-weight: 900;
+  line-height: 1.5em;
+  margin-left: 50px;
+}
