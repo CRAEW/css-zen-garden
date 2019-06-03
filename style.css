@@ -12,8 +12,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
-  top: -300px;
 
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -51,6 +49,8 @@ h1, h2, h3 {
 
 /* INTRO_Banner*/
 header {
+  height: 100vh;
+  top: -300px;
   border-bottom: 5px solid #121212;
 }
 
@@ -137,7 +137,7 @@ header h2 {
   500px 630px 500px 630px 100px / /*rows*/
   200px 1200px 200px; /*columns*/
 
-  background-color: (255,255,255,0.8)
+  background-color: (255,255,255,0.8);
 }
 
 .explanation {
