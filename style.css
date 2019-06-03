@@ -62,23 +62,73 @@ header h1 {
   line-height: 2em;
 }
 
-header h1:after {
+header h1::after {
   content: '';
   height: 1em;
   position: absolute;
   top: 0;
   left: -580px;
-  width: 100%;
+  /* width: 100%; */
   z-index: -1;
   border-bottom: 5px dotted #FF5056;
+
+  /* Shorthand property for animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode and animation-play-state.
+
+  Only animation-duration and animation-name are required. */
+  animation: slideinleft 5s 1 forwards;
+  -webkit-animation: slideinleft 5s 1 forwards;
+}
+
+
+@keyframes slideinleft {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+-webkit-@keyframes slideinleft {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 header h2 {
   font-weight: lighter;
   position: absolute;
   top: 150px;
-  left: 380px;
+  /* left: 370px; */
   color: #FF5056;
+
+  animation: slideinright 5s ease-in forwards;
+  -webkit-animation: slideinright 5s ease-in forwards;
+}
+
+@keyframes slideinright {
+  from {
+    /* top: -50px; */
+    left: 1100px;
+  }
+  to {
+    /* top: 150px; */
+    left: 370px;
+  }
+}
+
+-webkit-@keyframes slideinright {
+  from {
+    /* top: -50px; */
+    left: 1100px;
+  }
+  to {
+    /* top: 150px; */
+    left: 370px;
+  }
 }
 
 /* INTRO_quote*/
@@ -115,7 +165,7 @@ header h2 {
   font-weight: 900;
 }
 
-/* INTRO_green box*/
+/* INTRO_box*/
 .preamble {
   position: absolute;
   width: 500px;
@@ -142,7 +192,6 @@ header h2 {
   grid-row: 1 / 2;
   grid-column: 2 / 3;
 
-  box-sizing: content-box;
   border-right: 20px dotted #121212;
 
   display: flex;
@@ -159,12 +208,8 @@ header h2 {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
 
-  box-sizing: content-box;
   border-top: 20px dotted #121212;
-  border-top-left-radius: 10px;
   border-left: 20px dotted #121212;
-  border-bottom: 20px dotted #121212;
-  border-bottom-left-radius:10px;
 
   display: flex;
   flex-flow: column wrap;
@@ -180,10 +225,8 @@ header h2 {
   grid-row: 3 / 4;
   grid-column: 2 / 3;
 
-  box-sizing: content-box;
-  border-top-right-radius: 10px;
+  border-top: 20px dotted #121212;
   border-right: 20px dotted #121212;
-  border-bottom-right-radius:10px;
 
   display: flex;
   flex-flow: column wrap;
@@ -263,9 +306,14 @@ footer a {
   display: block;
   padding: 10px;
   margin: 20px;
-  border: 2px solid #121212;
+  border-bottom: 2px solid #fefefe;
   background-color: #121212;
   border-radius: 10px;
+}
+
+footer a:hover {
+  box-shadow: 0px 2px 5px #fefefe;
+  text-shadow: 0px 2px 5px #fefefe;
 }
 
 .sidebar div.wrapper {
@@ -280,9 +328,40 @@ footer a {
   justify-content: space-between;
 }
 
+.sidebar a:hover {
+  text-shadow: 0px 2px 5px #fefefe;
+}
+
 .design-selection a, .design-archives a, .zen-resources a {
   color: inherit;
   font-weight: 900;
   line-height: 1.5em;
   margin-left: 50px;
 }
+
+.design-selection h3 {
+  margin-left: 0;
+}
+
+.design-selection li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #fefefe;
+}
+
+.design-selection li a:first-child {
+  display: block;
+  text-transform: uppercase;
+}
+.design-selection li a {
+  margin-left: 0;
+}
+
+ .design-selection:after {
+   content:'Copyrights: Wendy Van Craen - BeCode Apprentice';
+   color: #fefefe;
+   font-size: 10px;
+   position: relative;
+   left: 200%;
+   bottom: -30px;
+ }
