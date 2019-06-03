@@ -201,31 +201,43 @@ header h2 {
 
   background-color: #BFBD80;
   border-top: 5px solid #121212;
-  border-bottom: 5px solid #121212;
 
-  padding-left: 200px;
-  padding-right: 200px;
-
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 200px 590px 590px 200px;
+  grid-template-rows: 80px 180px 300px 1fr;
 
   position: relative;
 }
 
-.requirements h3, .requirements p {
-  width: 500px;
+.requirements h3 {
+  grid-row: 1 / 2;
+  grid-column: 2 / span 2;
+  margin-top: 30px;
 }
 
-.requirements p {
-  margin-bottom: 30px;
+.requirements p:nth-child(2) {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.requirements p:nth-child(3) {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.requirements p:nth-child(4) {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+
+.requirements p:nth-child(5) {
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
 }
 
 .requirements p:last-child {
-  position: absolute;
-  bottom: 10px;
-  width: 1000px;
+  grid-row: 4 / 5;
+  grid-column: 2 / span 2;
   text-align: center;
   font-weight: 900;
   font-style: italic;
@@ -235,7 +247,7 @@ footer {
   grid-row: 5 / 6;
   grid-column: span 4;
 
-  background-color: #FF5056;
+  background-color: #121212;
   color: #fefefe;
   text-align: center;
 
@@ -249,7 +261,11 @@ footer a {
   font-weight: 900;
   font-size: 1.5em;
   display: block;
-  padding: 30px;
+  padding: 10px;
+  margin: 20px;
+  border: 2px solid #121212;
+  background-color: #121212;
+  border-radius: 10px;
 }
 
 .sidebar div.wrapper {
@@ -257,7 +273,7 @@ footer a {
   padding-right: 200px;
   padding-bottom: 50px;
   padding-top: 50px;
-  background-color: #121212;
+  background-color: #444323;
   color: #fefefe;
 
   display: flex;
